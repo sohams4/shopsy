@@ -1,9 +1,7 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import BagContext from "../contexts/BagContext";
 
 const ProductCard = ({ id, productName, regularPrice, salePrice, image }) => {
-    const { addToBag } = useContext(BagContext);
+    // const { addToBag } = useContext(BagContext);
 
     const item = {
         id,
@@ -13,9 +11,9 @@ const ProductCard = ({ id, productName, regularPrice, salePrice, image }) => {
         quantity: 1
     };
 
-    const handleAddToBag = () => {
-        addToBag(item);
-    };
+    // const handleAddToBag = () => {
+    //     addToBag(item);
+    // };
 
     const handleImageError = (e) => {
         e.target.src = "https://via.placeholder.com/150"; // Fallback image URL
@@ -35,10 +33,10 @@ const ProductCard = ({ id, productName, regularPrice, salePrice, image }) => {
                 <div className="row">
                     <div className="col-8">
                         <h2 className="card-heading font-color text-uppercase fs-4">{productName}</h2>
-                        <button onClick={handleAddToBag} className="btn add-cart-btn fw-medium p-1 px-3" aria-label={`Add ${productName} to bag`}>
+                        {/* <button onClick={handleAddToBag} className="btn add-cart-btn fw-medium p-1 px-3" aria-label={`Add ${productName} to bag`}>
                             <span className="fas mx-1 fs-5">&#xf290;</span>
                             <span className="pe-2">Add to bag</span>
-                        </button>
+                        </button> */}
                     </div>
                     <div className="col-4">
                         <p className="product-card-price font-color m-0">$ {salePrice.toFixed(2)} USD</p>
